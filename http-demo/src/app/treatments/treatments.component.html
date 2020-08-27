@@ -1,0 +1,14 @@
+<p>treatments works!</p>
+
+<button (click)="getTreatmentList()">Get treatment list</button>
+
+<ul>
+    <li *ngFor="let treat of treatmentCategoriesList; index as i">
+        {{treat.categoryName}} {{treat.registeredDateTime}}
+        <ul>
+            <li *ngFor="let dent of treatmentCategoriesList[i].dentalTreatment">
+                {{dent.id}} {{dent.name}} {{dent.price}}
+            </li>
+        </ul>
+    </li>
+</ul>

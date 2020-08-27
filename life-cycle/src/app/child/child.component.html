@@ -1,0 +1,14 @@
+<p>child works!</p>
+<button (click)='changeText()'>Change text</button>
+<button (click)='changeObject()'>Change object</button>
+<br><br>
+<input #inputDayText>
+<button (click)='addDay(inputDayText)'>Add day</button>
+<ul>
+    <li *ngFor="let day of weekDays">
+        {{day}}
+    </li>
+</ul>
+<p><b>OnChanges:</b></p>
+<p>{{someText}} </p>
+<p>{{someObject.someName}} </p>

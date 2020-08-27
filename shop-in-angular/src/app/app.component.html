@@ -1,0 +1,30 @@
+<h2>Welcome in our shop!</h2>
+<p>
+    <b>
+        Product from app-component: {{category.getCategory(0) | uppercase}}
+    </b>
+</p>
+<p>
+    Main board: {{mainBoard.name}} {{mainBoard.price + 255}}
+</p>
+
+<p>
+    RAM Memory null: {{ramMemory?.name}} {{ramMemory?.price}}
+</p>
+<p>
+    RAM Memory null 2: {{ramMemory && ramMemory.name}} {{ramMemory && ramMemory.price}}
+</p>
+
+<app-products></app-products>
+
+<p>
+    Dyrektywa ngFor:
+</p>
+<ul>
+    <li *ngFor="let ram of rml">
+        {{ram.name}} {{ram.price}}
+    </li>
+</ul>
+
+<app-categories></app-categories>
+<app-footer></app-footer>

@@ -1,0 +1,35 @@
+<p>products works!</p>
+
+
+
+<p>
+    Liczba PI to: {{pi | number: '1.1-4'}}
+</p>
+<p>
+    Aktualna data i czas to: {{currentDate | date: 'short'}}
+</p>
+<p>
+    Aktualna data i czas to: {{currentDate | date: 'dd-MM-yyyy hh:mm'}} (inny format)
+</p>
+
+<p>
+    HDD list:
+</p>
+<ul>
+    <li *ngFor="let hdd of hddList; let i = odd; let j = even">
+
+        <ng-container *ngIf="j">
+            {{i}} {{j}} {{hdd.name}} {{hdd.price}} {{hdd.volume}}
+        </ng-container>
+        <br>
+
+        <ng-container *ngIf="i; then isOdd; else isEven"></ng-container>
+        <ng-template #isOdd>
+            {{i}} {{j}} {{hdd.name}} {{hdd.price}} {{hdd.volume}} <b>is odd</b>
+        </ng-template>
+        <ng-template #isEven>
+            {{i}} {{j}} {{hdd.name}} {{hdd.price}} {{hdd.volume}} <b>is even</b>
+        </ng-template>
+
+    </li>
+</ul>

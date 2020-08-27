@@ -1,0 +1,39 @@
+<p>categories works!</p>
+
+<p>
+    Product from product-component: {{getCategory(2)}}
+</p>
+<img [src]="logoUrl">
+<br>
+<input [maxLength]="maxLengt" [value]="inputText"/>
+<button [disabled]="isDisable" (click)="change($event)">Dodaj</button>
+
+<p>Switch category:</p>
+<div *ngFor="let cat of categories">
+    <div [ngSwitch]="cat">
+        <div *ngSwitchCase="'processors'">Processors</div>
+        <div *ngSwitchDefault>SomeOutput</div>
+    </div>
+</div>
+
+<p>Categories:</p>
+<ul [className]="colorClass">
+    <li *ngFor="let category of categories; let i = index">
+        {{i + 1}}. {{category}}
+    </li>
+</ul>
+
+<p>Komputer typ {{machine}} należy do kategorii {{typeOfCategory}} </p>
+<input [value]="machine" (input)="saveMachine($event)" />
+<br>
+<input [value]="typeOfCategory" (input)="saveType($event)" />
+
+<p><b>two-way data binding - is a batter way:</b></p>
+<p>To use this is nessesary add special directive named ngModel from FormsModule package @angular/forms. FormModule must be imported in app.module.ts </p>
+<p>Komputer typ {{machine2}} należy do kategorii {{typeOfCategory2}} </p>
+<input [(ngModel)]="machine2" />
+<br>
+<input [(ngModel)]="typeOfCategory2" />
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br>

@@ -1,0 +1,37 @@
+<p>post works!</p>
+
+<button (click)="getPostList()" >Get post list</button>
+<br>
+<p *ngIf='errorObject'>
+    {{errorObject.message}}
+</p>
+<button (click)="getPost()">Get post</button>
+<div *ngIf="post != undefined">
+    <p>
+        Post id: {{post.id}}
+    </p>
+    <p>
+        Post title: {{post.title}}
+    </p>
+</div>
+<br>
+<button (click)="getPostByUser()">Get posts by user id</button>
+<br>
+<button (click)="addPost()">Add new post</button>
+<br>
+<button (click)="editPost()">Edit exist post</button>
+<p *ngIf="errorMessage">
+    {{errorMessage | json}}
+</p>
+<p *ngIf="errorMessage">
+    {{errorMessage.message}} {{errorMessage.status}}
+</p>
+<br>
+<button (click)="removePost()">Remove post</button>
+<br>
+<button (click)="getPostListObservable()">Show all posts Obesevable</button>
+<div *ngFor="let post of allPostObservable | async">
+    {{post.id}} {{post.title}}
+    <br>
+    {{post.body}}
+</div>

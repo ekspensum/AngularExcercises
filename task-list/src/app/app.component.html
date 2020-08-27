@@ -1,0 +1,14 @@
+<nav>
+    <button routerLink='/menu' routerLinkActive='active'>Menu</button>
+</nav>
+
+<h2>Task list</h2>
+
+<app-add-task (emitTask)="add($event)"></app-add-task>
+
+<app-todo-task [taskList]="taskList" (emitDone)="done($event)" (emitRemove)="remove($event)"></app-todo-task>
+
+<app-done-task [taskDone]="taskDone"></app-done-task>
+
+
+<router-outlet></router-outlet>

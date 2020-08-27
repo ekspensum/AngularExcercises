@@ -1,0 +1,13 @@
+<h2>Routing & Navigation</h2>
+
+<div class="container">
+  <nav>
+    <button routerLink='./' routerLinkActive='btn btn-primary' [routerLinkActiveOptions]="{ exact: true }">Home</button>
+    <!-- <button routerLink='/department' routerLinkActive='btn btn-primary' >Departments</button> -->
+    <button routerLink='/department' routerLinkActive='btn btn-primary' >Departments</button>
+    <button routerLink='/employee' routerLinkActive='btn btn-primary' >Employes</button>
+  </nav>
+
+</div>
+
+<router-outlet></router-outlet>
