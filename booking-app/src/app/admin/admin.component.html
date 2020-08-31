@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <h2 i18n="Some text about me" >About Admin</h2>
+            <div class="fakeimg">Fake Image</div>
+            <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+            <h3>Some Links</h3>
+            <p>Lorem ipsum dolor sit ame.</p>
+            <ul class="nav nav-pills flex-column">
+                <!-- <li class="nav-item">
+                    <a class="nav-link" routerLink="./" routerLinkActive="active">Admin main</a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="./addemployee" routerLinkActive="active">Add employee</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="./editemployee" routerLinkActive="active">Edit employee</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+            </ul>
+            <hr class="d-sm-none">
+        </div>
+        <div class="col-sm-8">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
