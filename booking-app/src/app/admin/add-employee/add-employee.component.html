@@ -23,8 +23,13 @@
       must be matches</small>
   </div>
   <div class="form-group">
+    <label for="phone">Phone</label>
+    <input [(ngModel)]="employee.phone" pattern="^$|^[0-9-+()]{9,20}$" type="text" name="phone" id="phone" class="form-control" placeholder="" aria-describedby="helpId">
+    <small id="helpId" class="text-muted">Help text</small>
+  </div>
+  <div class="form-group">
     <label for="email">Email</label>
-    <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId" placeholder="">
+    <input [(ngModel)]="employee.email" type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId" placeholder="">
     <small id="emailHelpId" class="form-text text-muted">Help text</small>
   </div>
   <div class="form-group">
@@ -44,5 +49,12 @@
     </select>
     <small id="language" class="text-danger" [class.d-none]="language.valid">Pleas choose a language.</small>
   </div>
+  <div class="form-group">
+    <label for="iamge">Upload file</label>
+    <input type="file" name="image" class="form-control" aria-describedby="helpId" #fileInput style="display: none;" (change)="onFileSelect($event)">
+    <button type="button" (click)="fileInput.click()" id="image">Pick file</button>
+    <small id="helpId" class="text-muted">Help text</small>
+  </div>
   <input [disabled]="employeeForm.form.invalid" name="" id="" class="btn btn-primary" type="submit" value="Save">
+
 </form>

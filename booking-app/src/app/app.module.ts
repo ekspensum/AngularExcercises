@@ -17,6 +17,8 @@ import { EditEmployeeComponent } from './admin/edit-employee/edit-employee.compo
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './services/user.service';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { LanguageService } from './services/language.service';
 
 @NgModule({
   declarations: [
@@ -37,9 +39,10 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    TranslateModule.forRoot()
   ],
-  providers: [UserService],
+  providers: [UserService, LanguageService, TranslateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

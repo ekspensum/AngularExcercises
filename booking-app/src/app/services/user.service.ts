@@ -16,6 +16,9 @@ export class UserService {
   }
 
   saveEmployee(employee: Employee): Observable<string> {
-    return this.http.post('https://jsonplaceholder.typicode.com/posts', employee, {responseType: 'text'});
+    const server = 'http://localhost:8080/addEmpolyee';
+    // const server = 'https://jsonplaceholder.typicode.com/posts';
+
+    return this.http.post(server, employee, {responseType: 'text'});
   }
 }
