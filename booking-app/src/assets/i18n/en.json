@@ -1,4 +1,13 @@
 {
-  "main.header.welcome": "Welcome",
-  "main.page.title": "{{title}} is running!"
+  "requiredField": "Field is required and must be matches",
+  "addEmployee": {
+    "firstName": "First name:",
+    "lastName": "Last name:",
+    "phone": "Phone:",
+    "selectLanguage": "Select language"
+  },
+  "login": {
+    "password": "Password:",
+    "signin": "Sign in"
+  }
 }

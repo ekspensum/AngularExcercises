@@ -19,6 +19,7 @@ import { UserService } from './services/user.service';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { LanguageService } from './services/language.service';
+import { AuthenticationService } from './services/authentication.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { LanguageService } from './services/language.service';
     FormsModule,
     TranslateModule.forRoot()
   ],
-  providers: [UserService, LanguageService, TranslateService],
+  providers: [UserService, LanguageService, TranslateService, AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

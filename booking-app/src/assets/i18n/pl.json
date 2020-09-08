@@ -1,4 +1,13 @@
 {
-  "main.header.welcome": "Witamy",
-  "main.page.title": "{{title}} jest uruchomiony!"
+  "requiredField": "Pole jest wymagane i powinno być dopasowane",
+  "addEmployee": {
+    "firstName": "Imię:",
+    "lastName": "Nazwisko:",
+    "phone": "Telefon:",
+    "selectLanguage": "Wybierz język:"
+  },
+  "login": {
+    "password": "Hasło:",
+    "signin": "Zaloguj się"
+  }
 }

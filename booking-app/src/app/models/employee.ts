@@ -10,7 +10,7 @@ export class Employee {
         public phone: string,
         public pesel: string,
         public language: string,
-        public photo: any,
+        public stringPhoto: any,
         public user: User
     ) {}
 

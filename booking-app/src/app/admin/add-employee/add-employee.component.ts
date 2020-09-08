@@ -4,6 +4,9 @@ import { ILanguage } from 'src/app/interfaces/ilanguage';
 import { Employee } from 'src/app/models/employee';
 import { User } from 'src/app/models/user';
 import { LanguageService } from 'src/app/services/language.service';
+import { ITranslate } from 'src/app/interfaces/itranslate';
+import { ActivatedRoute } from '@angular/router';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-add-employee',
@@ -17,22 +20,24 @@ export class AddEmployeeComponent implements OnInit {
   employee: Employee;
   selectedFile: File;
   imageFileText: string;
+  translate: ITranslate;
 
-  constructor(private userService: UserService, private languageService: LanguageService) {
+  constructor(private userService: UserService, private languageService: LanguageService, private route: ActivatedRoute, public appComponent: AppComponent) {
 
     this.getLanguageList();
     this.user = new User(null, null, null, null, null);
     this.employee = new Employee(null, null, null, null, null, null, null, null, this.user);
+    this.languageService.loadLanguage().subscribe( resp => {
+      this.translate = resp;
+    });
+
+    console.log(route);
+    console.log(appComponent);
 
   }
 
   ngOnInit(): void {
-
-    this.languageService.loadLanguage().subscribe( resp => {
-      console.log(resp);
-
-    })
-
+    console.log(this.appComponent.title);
   }
 
   getLanguageList() {
@@ -68,7 +73,7 @@ export class AddEmployeeComponent implements OnInit {
     this.selectedFile = event.target.files[0];
     let fileReader = new FileReader();
     fileReader.onload = (e) => {
-      this.employee.photo = fileReader.result;
+      this.employee.stringPhoto = fileReader.result;
     }
     fileReader.readAsDataURL(this.selectedFile);
 
